@@ -1,0 +1,9 @@
+- Search for a library to measure code performance
+- Scraping Euler problems and creating my daily math problem. A nice GUI would be fun to have; does Project Euler have an API? That would be awesome
+
+def measure_time(func, *args):
+    start_time = time.perf_counter()
+    result = func(*args)
+    end_time = time.perf_counter()
+    execution_time = (end_time - start_time) * 1000  # Convert to milliseconds
+    return result, execution_time

@@ -1,3 +1,4 @@
+'''
 def generate_fibonacci_up_to(max_value):
     fibs = [0, 1]
     while True:
@@ -36,3 +37,23 @@ if len(even_fib_numbers) >= 2:
         print(f"\nSum of the last two even Fibonacci numbers does not equal the target sum: {target_sum} != {even_fib_numbers[-1]+even_fib_numbers[-2]}")
 else:
     print("\nNot enough even Fibonacci numbers to perform the check.")
+'''
+
+#S=Fa+Fb
+import math
+
+def is_perfect_square(x):
+    #Check if x is a perfect square
+    s = int(math.sqrt(x))
+    return s * s == x
+
+def is_fibonacci_number(n):
+    """Check if n is a Fibonacci number
+    A number n is a Fibonacci number if and only if
+    one or both of (5*n^2 + 4) or (5*n^2 - 4) is a perfect square"""
+    if n < 0:
+        return False
+    return is_perfect_square(5 * n * n + 4) or is_perfect_square(5 * n * n - 4)
+
+print(is_fibonacci_number(3524578))
+

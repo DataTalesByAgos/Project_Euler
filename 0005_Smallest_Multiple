@@ -1,0 +1,42 @@
+# 2520 is the smallest number that can be divided by each of the number from 1 to 10 without any remainder
+# what is the smallest number that is evenly divisible by all of the number from 1 to 20.
+
+#res = 16*9*5*7*11*13*17*19 
+from math import gcd
+from functools import reduce
+import time
+
+def lcm(a, b):
+    return a * b // gcd(a, b)
+
+def smallest_div(x, y):
+    if y < x:
+        print("Second number should be greater than the first.")
+        return
+    if x <= 0 or y <= 0:
+        print("0 and negative numbers are not valid.")
+        return
+    
+    result = reduce(lcm, range(x, y + 1))
+    return result
+
+def measure_time(func, *args):
+    start_time = time.perf_counter()
+    result = func(*args)
+    end_time = time.perf_counter()
+    execution_time = (end_time - start_time) * 1000  # Convert to milliseconds
+    return result, execution_time
+
+def main():
+    entry = input("Enter the range (e.g., 1-20): ")
+    try:
+        x, y = map(int, entry.split('-'))
+        result, execution_time = measure_time(smallest_div, x, y)
+        if result:
+            print(f"The smallest number that is evenly divisible by all numbers from {x} to {y} is {result}.")
+            print(f"Time taken: {execution_time:.4f} milliseconds")
+    except ValueError:
+        print("Invalid input. Please enter two numbers separated by a dash (e.g., 1-20).")
+
+if __name__ == "__main__":
+    main()

@@ -27,7 +27,7 @@ For any prime number greater than 3, it can be shown that the number must be of 
 6k±1 for some integer k. This is based on the fact that prime numbers cannot be divisible by 2 or 3.
 
 '''
-import time
+from measure_time import measure_time
 
 def measure_time(func, *args):
     start_time = time.perf_counter()

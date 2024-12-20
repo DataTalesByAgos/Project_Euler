@@ -5,7 +5,7 @@ numbers is 9009 = 91 x 99
 Find the largest palindrome made from the product of two 3-digit numbers.
 
 '''
-import time
+from measure_time import measure_time
 
 def is_palindrome(num):
     s = str(num)
@@ -23,13 +23,6 @@ def find_largest_palindrome_optimized():
                 max_palindrome = product
                 factors = (i, j)
     return max_palindrome, factors
-
-def measure_time(func, *args):
-    start_time = time.perf_counter()
-    result = func(*args)
-    end_time = time.perf_counter()
-    execution_time = (end_time - start_time) * 1000
-    return result, execution_time
 
 result, execution_time = measure_time(find_largest_palindrome_optimized)
 

@@ -41,6 +41,7 @@ else:
 
 #S=Fa+Fb
 import math
+from measure_time import measure_time
 
 def is_perfect_square(x):
     #Check if x is a perfect square
@@ -55,5 +56,6 @@ def is_fibonacci_number(n):
         return False
     return is_perfect_square(5 * n * n + 4) or is_perfect_square(5 * n * n - 4)
 
+result, exec_time = measure_time(is_fibonacci_number)
 print(is_fibonacci_number(3524578))
 

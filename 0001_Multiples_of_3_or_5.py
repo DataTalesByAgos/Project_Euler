@@ -5,14 +5,7 @@ of 3 or 5, we get 3, 5, 6 and 9.
 The sum of these multiples is 23.
 Find the sum of all the multiples of 3 or 5 below 1000.
 '''
-import time
-
-def measure_time(func, *args):
-    start_time = time.perf_counter()
-    result = func(*args)
-    end_time = time.perf_counter()
-    execution_time = (end_time - start_time) * 1000  # Convert to milliseconds
-    return result, execution_time
+from measure_time import measure_time
 
 def multiples():
     res = []

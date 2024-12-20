@@ -29,13 +29,6 @@ For any prime number greater than 3, it can be shown that the number must be of 
 '''
 from measure_time import measure_time
 
-def measure_time(func, *args):
-    start_time = time.perf_counter()
-    result = func(*args)
-    end_time = time.perf_counter()
-    execution_time = (end_time - start_time) * 1000
-    return result, execution_time
-
 def largest_prime_factor(n):
     largest = None
     

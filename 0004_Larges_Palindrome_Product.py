@@ -13,12 +13,11 @@ def is_palindrome(num):
 
 def find_largest_palindrome_optimized():
     max_palindrome = 0
-    # Start from the largest 3-digit number and work downwards
     for i in range(999, 99, -1):
         for j in range(i, 99, -1):
             product = i * j
             if product <= max_palindrome:
-                break  # Products will decrease after this
+                break
             if is_palindrome(product):
                 max_palindrome = product
                 factors = (i, j)
